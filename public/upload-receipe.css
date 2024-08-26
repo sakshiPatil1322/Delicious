@@ -1,0 +1,263 @@
+/* Main container */
+.recform {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f7f7f7;
+    padding: 20px;
+}
+
+.recform-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+}
+
+.recform-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.places form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-size: 16px;
+    color: #333;
+    margin-right: 15px;
+    font-family: 'Arial', sans-serif;
+    width: 150px; /* Adjust width as needed */
+}
+
+.form-group input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: 'Arial', sans-serif;
+    width: 100%;
+}
+
+.form-group input[type="text"]:focus {
+    border-color: #8cdd86;
+    outline: none;
+}
+
+/* dish type */
+
+/* Nice Select Styles */
+.nice-select {
+    padding: 0; /* Remove padding */
+    margin-left: 0; /* Adjust margin as needed */
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    background: none;
+    border: 1px solid #ddd;
+    height: 42px;
+    width: 380px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center; /* Vertically align the text */
+}
+
+.nice-select .current {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #888; /* Placeholder text color */
+    height: 100%; /* Ensure it takes full height */
+    padding: 0 10px; /* Add padding for spacing */
+    box-sizing: border-box; /* Include padding in total width/height */
+}
+
+.nice-select .current .placeholder {
+    margin: 0;
+    line-height: 42px; /* Center text vertically */
+}
+
+/* Form Group Styles */
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-size: 16px;
+    color: #333;
+    margin-right: 15px;
+    font-family: 'Arial', sans-serif;
+    width: 150px; /* Adjust width as needed */
+}
+
+.form-group select {
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    width: 100%; /* Ensure it takes full width */
+}
+
+.form-group select:focus {
+    border-color: #8cdd86;
+    outline: none;
+}
+
+.form-group option {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+/* image dropdown */
+
+.image-drop-area {
+    border: 2px dashed #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.3s;
+    background-color: #f9f9f9;
+    font-family: 'Arial', sans-serif;
+}
+
+.image-drop-area p {
+    font-size: 14px;
+    color: #888;
+    margin: 0;
+}
+
+.image-drop-area:hover {
+    border-color: #40ba37;
+}
+
+.image-drop-area input[type="file"] {
+    display: none;
+}
+
+button[type="submit"] {
+    background-color: #40ba37;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Arial', sans-serif;
+    margin-top: 20px;
+    width: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button[type="submit"]:hover {
+    background-color: #8cdd86;
+}
+
+/* General Styling for Sections */
+.ingredients-section, .steps-section {
+    margin-top: 20px;
+}
+
+/* Ingredient Input Container */
+.ingredient-input-container, .step-input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Ingredient and Step Label */
+.ingredient-input-container label, .step-input-container label {
+    margin-right: 10px; /* Space between label and input */
+    font-size: 16px; /* Font size for the label */
+    color: #333; /* Label color */
+    font-family: 'Arial', sans-serif;
+    width: 120px; /* Adjust width as needed */
+}
+
+/* Ingredient and Step Input */
+#ingredientInput, #stepInput {
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    width: calc(100% - 140px); /* Adjust width to leave space for the label */
+    margin-left: 33px;
+}
+
+#ingredientInput::placeholder, #stepInput::placeholder {
+    color: #888;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px; /* Smaller font size for the placeholder */
+}
+
+/* Ingredient and Step Buttons */
+#addIngredientBtn, #addStepBtn {
+    padding: 10px 20px;
+    background-color: #40ba37;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+#addIngredientBtn:hover, #addStepBtn:hover {
+    background-color: #8cdd86;
+}
+
+/* Ingredient and Step List */
+#ingredientsList, #stepsList {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+#ingredientsList li, #stepsList li {
+    background-color: #f9f9f9;
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Remove Button */
+.remove-btn {
+    background-color: #dc3545;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 2px 8px;
+}
+
+.remove-btn:hover {
+    background-color: #c82333;
+}
