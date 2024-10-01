@@ -1,18 +1,30 @@
+const Uploads = require('../models/upload');
 
-const handleIndexPage = async(req,res) => {
-    res.render('index');
+const handleIndexPage = async (req, res) => {
+    const events = await Uploads.find({}).sort({ createdAt: -1 }).limit(6); // Sort by creation time in descending order and limit to 6
+    const receipe = await Uploads.find({});
+    res.render('index', { events ,receipe,cookies: req.cookies});
 }
 
 const handleReceipePostPage = async(req,res) => {
-    res.render('receipe-post');
+    const receipes = [];
+    res.render('receipe-post', { receipes ,cookies: req.cookies});
 }
 
 const handleUploadReceipe= async(req,res) => {
-    res.render('upload-receipe');
+    res.render('upload-receipe',{cookies: req.cookies});
 }
 
 const handleContactPage = async(req,res) => {
-    res.render('contact');
+    res.render('contact',{cookies: req.cookies});
+}
+
+const handleSignupPage = async(req,res) => {
+    res.render('signup');
+}
+
+const handleLoginPage = async(req,res) => {
+    res.render('login');
 }
 
 module.exports={
@@ -20,4 +32,7 @@ module.exports={
     handleReceipePostPage,
     handleUploadReceipe,
     handleContactPage,
+    handleSignupPage,
+    handleLoginPage
 }
+

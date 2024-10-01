@@ -27,9 +27,9 @@
     </div>
 
     <!-- Search Wrapper -->
-    <div class="search-wrapper">
+    <!-- <div class="search-wrapper"> -->
         <!-- Close Btn -->
-        <div class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></div>
+        <!-- <div class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></div>
 
         <div class="container">
             <div class="row">
@@ -41,10 +41,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- ##### Header Area Start ##### -->
-    <header class="header-area">
+    <header class="header-area font">
 
         <!-- Navbar Area -->
         <div class="delicious-main-menu">
@@ -54,7 +54,7 @@
                     <nav class="classy-navbar justify-content-between" id="deliciousNav">
 
                         <!-- Logo -->
-                        <a class="nav-brand" href="index.ejs"><img src="img/core-img/logo.png" alt=""></a>
+                        <a class="nav-brand" href="/"><img src="img/core-img/logo.png" alt=""></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -72,18 +72,26 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li class="active"><a href="index.ejs">Home</a></li>
+                                    <li><a href="/">Home</a></li>
                                     <li><a href="upload-receipe.ejs">Upload Receipies</a>
                                     </li>
                                     <li><a href="receipe-post.ejs">Receipies</a></li>
                                     <!-- <li><a href="receipe-post.ejs">4 Vegans</a></li> -->
                                     <li><a href="contact.ejs">Contact</a></li>
+
+                                    <% if (cookies.uid) { %>
+                                        <li class="active"><a href="/logout" class="login-button">Logout</a></li>
+                                    <% } else { %>
+                                        <li class="active"><a href="/login" class="login-button active">Login</a></li>
+                                        <li class="active"><a href="/signup" class="signup-button active">Signup</a></li>
+                                    <% } %>    
                                 </ul>
 
                                 <!-- Newsletter Form -->
-                                <div class="search-btn">
+                                <!-- <div class="search-btn">
                                     <i class="fa fa-search" aria-hidden="true"></i>
-                                </div>
+                                    <span class="text" style="color: gray;">Search Testy...</span>
+                                </div> -->
 
                             </div>
                             <!-- Nav End -->
@@ -94,9 +102,10 @@
         </div>
     </header>
     <!-- ##### Header Area End ##### -->
+    <!-- ##### Header Area End ##### -->
 
     <!-- ##### Breadcumb Area Start ##### -->
-    <div class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/breadcumb4.jpg);">
+    <!-- <div class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/breadcumb4.jpg);">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
@@ -106,11 +115,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- ##### Breadcumb Area End ##### -->
 
     <!-- ##### Contact Information Area Start ##### -->
-    <div class="contact-information-area section-padding-80">
+    <!-- <div class="contact-information-area section-padding-80">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -118,37 +127,37 @@
                         <img src="img/core-img/logo.png" alt="">
                     </div>
                 </div>
-            </div>
+            </div> -->
 
-            <div class="row">
+            <!-- <div class="row"> -->
                 <!-- Contact Text -->
-                <div class="col-12 col-lg-5">
+                <!-- <div class="col-12 col-lg-5">
                     <div class="contact-text">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac pellentesque tortor. Aenean congue sed metus in iaculis. Cras a tortor enim. Phasellus posuere vestibulum ipsum, eget lobortis purus.</p>
                         <p>Orci varius natoque penatibus et magnis dis ac pellentesque tortor. Aenean congue parturient montes, nascetur ridiculus mus.</p>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="col-12 col-lg-3">
+                <!-- <div class="col-12 col-lg-3"> -->
                     <!-- Single Contact Information -->
-                    <div class="single-contact-information mb-30">
+                    <!-- <div class="single-contact-information mb-30">
                         <h6>Address:</h6>
                         <p>481 Creekside Lane Avila <br>Beach, CA 93424</p>
-                    </div>
+                    </div> -->
                     <!-- Single Contact Information -->
-                    <div class="single-contact-information mb-30">
+                    <!-- <div class="single-contact-information mb-30">
                         <h6>Phone:</h6>
                         <p>+53 345 7953 32453 <br>+53 345 7557 822112</p>
-                    </div>
+                    </div> -->
                     <!-- Single Contact Information -->
-                    <div class="single-contact-information mb-30">
+                    <!-- <div class="single-contact-information mb-30">
                         <h6>Email:</h6>
                         <p>yourmail@gmail.com</p>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Newsletter Area -->
-                <div class="col-12 col-lg-4">
+                <!-- <div class="col-12 col-lg-4">
                     <div class="newsletter-form bg-img bg-overlay" style="background-image: url(img/bg-img/bg1.jpg);">
                         <form action="#" method="post">
                             <input type="email" name="email" placeholder="Subscribe to newsletter">
@@ -159,7 +168,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- ##### Contact Information Area End ##### -->
 
     <!-- ##### Contact Form Area Start ##### -->
@@ -168,7 +177,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading">
-                        <h3>Get In Touch</h3>
+                        <h3>Get In Touch With saucier</h3>
                     </div>
                 </div>
             </div>
@@ -176,19 +185,19 @@
             <div class="row">
                 <div class="col-12">
                     <div class="contact-form-area">
-                        <form action="#" method="post">
+                        <form action="/contact" method="post">
                             <div class="row">
                                 <div class="col-12 col-lg-6">
-                                    <input type="text" class="form-control" id="name" placeholder="Name">
+                                    <input type="email" class="form-control" name="email1" id="email" placeholder="Your E-mail">
                                 </div>
                                 <div class="col-12 col-lg-6">
-                                    <input type="email" class="form-control" id="email" placeholder="E-mail">
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="E-mail of Saucier(Present At  the bottom of the Receipe)">
                                 </div>
                                 <div class="col-12">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
                                 </div>
                                 <div class="col-12">
-                                    <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+                                    <textarea name="message" class="form-control" name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
                                 </div>
                                 <div class="col-12 text-center">
                                     <button class="btn delicious-btn mt-30" type="submit">Send</button>
@@ -207,33 +216,17 @@
         <div id="googleMap"></div>
     </div> -->
 
-    <!-- ##### Footer Area Start ##### -->
-    <footer class="footer-area">
-        <div class="container h-100">
+       <!-- ##### Footer Area Start ##### -->
+       <footer class="footer-area shadow">
+        <div class="container h-100"style="display: flex;align-items: center;justify-content: center;">
             <div class="row h-100">
                 <div class="col-12 h-100 d-flex flex-wrap align-items-center justify-content-between">
-                    <!-- Footer Social Info -->
-                    <div class="footer-social-info text-right">
-                        <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                    </div>
-                    <!-- Footer Logo -->
                     <div class="footer-logo">
-                        <a href="index.ejs"><img src="img/core-img/logo.png" alt=""></a>
-                    </div>
-                    <!-- Copywrite -->
-                    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                </div>
+                        <a href="/"><img src="img/core-img/logo.png" alt=""></a>
             </div>
         </div>
     </footer>
-    <!-- ##### Footer Area Start ##### -->
+    <!-- ##### Footer Area End ##### -->
 
     <!-- ##### All Javascript Files ##### -->
     <!-- jQuery-2.2.4 js -->

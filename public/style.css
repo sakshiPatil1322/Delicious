@@ -22,9 +22,13 @@
   margin: 0;
   padding: 0; }
 
+body, html {
+  overflow: auto; /* Ensure scrolling is allowed */
+}
+
 body {
-  font-family: "Open Sans", sans-serif;
-  font-size: 14px; 
+  font-family: 'Playfair Display', serif;
+  font-weight: 400; 
   background-color: rgba(243, 243, 243, 0.455);
 }
 
@@ -67,6 +71,10 @@ img {
   height: auto;
   max-width: 100%; }
 
+.receipe-slider img{
+  height: 500px;
+  width: 100%;
+}
 /* Spacing */
 .mt-15 {
   margin-top: 15px !important; }
@@ -506,7 +514,7 @@ textarea:focus {
         .header-area .delicious-main-menu .classy-navbar .classynav > ul > li.active > a::after {
           color: #ffffff; }
     .header-area .delicious-main-menu .classynav .search-btn {
-      color: #b6b6b6;
+      color: rgb(236, 178, 52);
       margin-left: 150px;
       cursor: pointer;
       -webkit-transition-duration: 500ms;
@@ -1381,3 +1389,75 @@ textarea:focus {
     padding-left: 30px; }
 
 /*# sourceMappingURL=style.css.map */
+
+.outer-container{
+  width: 100%;
+  /* padding-left: 100px;
+  padding-right: 100px; */
+  padding-bottom: 60px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.quote-area-here{
+  padding: 20px;
+  height: auto;
+  width: 700px;
+  border: 6px solid #40ba37;
+}h1{
+  color: #40ba37;
+}
+
+.signup-button{
+  margin-left: 25px;
+}
+
+#receName :hover{
+  color: #40ba37;
+}
+
+.shadow{
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+}
+
+.padding{
+  padding: 10px;
+}
+
+.height{
+  height: 40px;
+}
+
+.height1{
+  height: 435px;
+}
+
+.height1 span{
+  size: 3px;
+  color: #40ba37;
+}
+
+.font{
+  font-family: "Open Sans", sans-serif;
+}
+
+.get{
+  display: flex;
+}
+
+.accbtn{
+  margin-left: 97px;
+}
+
+.accbtn h6{
+  color: rgb(236, 178, 52);
+}
+
+#accept p{
+  color: rgb(236, 178, 52);
+}
+
+
+
+

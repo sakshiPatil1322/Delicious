@@ -12,10 +12,10 @@
     <title>Delicious - Food Blog Template | Home</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="icon" href="/img/core-img/favicon.ico">
 
     <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
 
 </head>
 
@@ -23,13 +23,13 @@
     <!-- Preloader -->
     <div id="preloader">
         <i class="circle-preloader"></i>
-        <img src="img/core-img/salad.png" alt="">
+        <img src="/img/core-img/salad.png" alt="">
     </div>
 
     <!-- Search Wrapper -->
-    <div class="search-wrapper">
+    <!-- <div class="search-wrapper"> -->
         <!-- Close Btn -->
-        <div class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></div>
+        <!-- <div class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></div>
 
         <div class="container">
             <div class="row">
@@ -41,10 +41,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- ##### Header Area Start ##### -->
-    <header class="header-area">
+    <header class="header-area font">
 
         <!-- Navbar Area -->
         <div class="delicious-main-menu">
@@ -54,7 +54,7 @@
                     <nav class="classy-navbar justify-content-between" id="deliciousNav">
 
                         <!-- Logo -->
-                        <a class="nav-brand" href="index.ejs"><img src="img/core-img/logo.png" alt=""></a>
+                        <a class="nav-brand" href="/"><img src="/img/core-img/logo.png" alt=""></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -72,18 +72,16 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li class="active"><a href="index.ejs">Home</a></li>
-                                    <li><a href="#">Upload Receipies</a>
-                                    </li>
-                                    <li><a href="receipe-post.ejs">Receipies</a></li>
-                                    <!-- <li><a href="receipe-post.ejs">4 Vegans</a></li> -->
-                                    <li><a href="contact.ejs">Contact</a></li>
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="/upload-receipe.ejs">Upload Receipies</a></li>
+                                    <li><a href="/receipe-post.ejs">Receipies</a></li>
+                                    <li><a href="/contact.ejs">Contact</a></li>
                                 </ul>
 
                                 <!-- Newsletter Form -->
-                                <div class="search-btn">
+                                <!-- <div class="search-btn">
                                     <i class="fa fa-search" aria-hidden="true"></i>
-                                </div>
+                                </div> -->
 
                             </div>
                             <!-- Nav End -->
@@ -93,10 +91,11 @@
             </div>
         </div>
     </header>
-    <!-- ##### Header Area End ##### -->
+<!-- ##### Header Area End ##### -->
+
 
     <!-- ##### Breadcumb Area Start ##### -->
-    <div class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/breadcumb3.jpg);">
+    <div class="breadcumb-area bg-img bg-overlay" style="background-image: url('/img/bg-img/breadcumb3.jpg');">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
@@ -111,156 +110,98 @@
 
     <div class="receipe-post-area section-padding-80">
 
-        <!-- Receipe Post Search -->
-        <div class="receipe-post-search mb-80">
-            <div class="container">
-                <form action="#" method="post">
-                    <div class="row">
-                        <div class="col-12 col-lg-3">
-                            <select name="select1" id="select2">
-                                <option value="1">All Receipies Categories</option>
-                                <option value="1">All Receipies Categories 2</option>
-                                <option value="1">All Receipies Categories 3</option>
-                                <option value="1">All Receipies Categories 4</option>
-                                <option value="1">All Receipies Categories 5</option>
-                            </select>
-                        </div>
-                        <div class="col-12 col-lg-3">
-                            <input type="search" name="search" placeholder="Search Receipies">
-                        </div>
-                        <div class="col-12 col-lg-3 text-right">
-                            <button type="submit" class="btn delicious-btn">Search</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
 
-        <!-- Receipe Slider -->
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="receipe-slider owl-carousel">
-                        <img src="img/bg-img/bg5.jpg" alt="">
-                        <img src="img/bg-img/bg5.jpg" alt="">
-                        <img src="img/bg-img/bg5.jpg" alt="">
-                    </div>
+       
+            <div class="receipe-post-search mb-80">
+                <div class="container">
+                    <form id="searchForm" action="/receipe-post.ejs/:name" method="get" onsubmit="updateFormAction(event)">
+                        <div class="row shadow d-flex"style="align-items:center;justify-content:center;height:120px;position: relative;">
+                            <!-- <div class="col-12 col-lg-3"> -->
+                                <input type="search" id="searchInput" name="search" placeholder="Enter Receipe Name ..." class="shadow" style="width: 60%;border: 1px solid orange; border-radius: 2px;font-size: 20px;">
+                            <!-- </div> -->
+                            <!-- <div class="col-12 col-lg-3 text-right"> -->
+                                <button type="submit" class="btn delicious-btn" onclick="updateFormAction(event)" >Search</button>
+                            <!-- </div> -->
+                        </div>
+                    </form>
                 </div>
             </div>
-        </div>
-
-        <!-- Receipe Content Area -->
-        <div class="receipe-content-area">
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-12 col-md-8">
-                        <div class="receipe-headline my-5">
-                            <span>April 05, 2018</span>
-                            <h2>Vegetarian cheese salad</h2>
-                            <div class="receipe-duration">
-                                <h6>Prep: 15 mins</h6>
-                                <h6>Cook: 30 mins</h6>
-                                <h6>Yields: 8 Servings</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-4">
-                        <div class="receipe-ratings text-right my-5">
-                            <div class="ratings">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                            </div>
-                            <a href="#" class="btn delicious-btn">For Begginers</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-12 col-lg-8">
-                        <!-- Single Preparation Step -->
-                        <div class="single-preparation-step d-flex">
-                            <h4>01.</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac pellentesque tortor. Aenean congue sed metus in iaculis. Cras a tortor enim. Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-                        </div>
-                        <!-- Single Preparation Step -->
-                        <div class="single-preparation-step d-flex">
-                            <h4>02.</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac pellentesque tortor. Aenean congue sed metus in iaculis. Cras a tortor enim. Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-                        </div>
-                        <!-- Single Preparation Step -->
-                        <div class="single-preparation-step d-flex">
-                            <h4>03.</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac pellentesque tortor. Aenean congue sed metus in iaculis. Cras a tortor enim. Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-                        </div>
-                        <!-- Single Preparation Step -->
-                        <div class="single-preparation-step d-flex">
-                            <h4>04.</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac pellentesque tortor. Aenean congue sed metus in iaculis. Cras a tortor enim. Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-                        </div>
-                    </div>
-
-                    <!-- Ingredients -->
-                    <div class="col-12 col-lg-4">
-                        <div class="ingredients">
-                            <h4>Ingredients</h4>
-
-                            <!-- Custom Checkbox -->
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                <label class="custom-control-label" for="customCheck1">4 Tbsp (57 gr) butter</label>
-                            </div>
-
-                            <!-- Custom Checkbox -->
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck2">
-                                <label class="custom-control-label" for="customCheck2">2 large eggs</label>
-                            </div>
-
-                            <!-- Custom Checkbox -->
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck3">
-                                <label class="custom-control-label" for="customCheck3">2 yogurt containers granulated sugar</label>
-                            </div>
-
-                            <!-- Custom Checkbox -->
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck4">
-                                <label class="custom-control-label" for="customCheck4">1 vanilla or plain yogurt, 170g container</label>
-                            </div>
-
-                            <!-- Custom Checkbox -->
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck5">
-                                <label class="custom-control-label" for="customCheck5">2 yogurt containers unbleached white flour</label>
-                            </div>
-
-                            <!-- Custom Checkbox -->
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck6">
-                                <label class="custom-control-label" for="customCheck6">1.5 yogurt containers milk</label>
-                            </div>
-
-                            <!-- Custom Checkbox -->
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck7">
-                                <label class="custom-control-label" for="customCheck7">1/4 tsp cinnamon</label>
-                            </div>
-
-                            <!-- Custom Checkbox -->
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck8">
-                                <label class="custom-control-label" for="customCheck8">1 cup fresh blueberries </label>
+            
+            <% if (receipes && receipes.length > 0) { %>
+                <div class="maincont">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-md-8">
+                                <% receipes.forEach(recipe => { %>
+                                    
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="receipe-slider owl-carousel shadow">
+                                                    <% if (recipe.images && recipe.images.length > 0) { %>
+                                                        <img src="<%= recipe.images[0].filePath.startsWith('http') ? recipe.images[0].filePath : '/' + recipe.images[0].filePath %>" alt="Recipe Image">
+                                                    <% } else { %>
+                                                        <p>No image available for this recipe.</p>
+                                                    <% } %>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    <div class="receipe-headline my-5">
+                                        <h2><%= recipe.receipeName %> (<%= recipe.dishType %>)</h2>
+                                        <div class="receipe-duration">
+                                            <h6>Prep: <%= recipe.preprationTime %></h6>
+                                            <h6>Cook: <%= recipe.cookingTime %></h6>
+                                            <h6>Yields: <%= recipe.servings %></h6>
+                                        </div>
+                                    </div>
+            
+                                    <!-- Instructions -->
+                                    <div class="row">
+                                        <div class="col-12 col-lg-8">
+                                            <h4>Instructions</h4>
+                                            <% recipe.instructions.forEach((instruction, index) => { %>
+                                                <div class="single-preparation-step d-flex">
+                                                    <h4><%= (index + 1).toString().padStart(2, '0') %>.</h4>
+                                                    <p><%= instruction %></p>
+                                                </div>
+                                            <% }) %>
+                                        </div>
+            
+                                        <!-- Ingredients -->
+                                        <div class="col-12 col-lg-4">
+                                            <div class="ingredients">
+                                                <h4>Ingredients</h4>
+                                                <% recipe.ingredients.forEach((ingredient, index) => { %>
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck<%= index + 1 %>">
+                                                        <label class="custom-control-label" for="customCheck<%= index + 1 %>"><%= ingredient %></label>
+                                                    </div>
+                                                <% }) %>
+                                            </div>
+                                        </div>
+                                    </div>
+            
+                                    <div class="receipe-headline my-5">
+                                        <div class="receipe-duration">
+                                            <h5>Created By: <%= recipe.createdBy %></h5>
+                                            <h5>Email: <%= recipe.email %></h5>
+                                        </div>
+                                    </div>
+                                <% }) %>
                             </div>
                         </div>
                     </div>
                 </div>
+            <% } else { %>
+                <p>Oops!!!There is no Receipe.</p>
+            <% } %>
+                                    
+             
 
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-12">
                         <div class="section-heading text-left">
                             <h3>Leave a comment</h3>
@@ -295,47 +236,32 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
-    <!-- ##### Footer Area Start ##### -->
-    <footer class="footer-area">
-        <div class="container h-100">
+       <!-- ##### Footer Area Start ##### -->
+       <footer class="footer-area shadow">
+        <div class="container h-100"style="display: flex;align-items: center;justify-content: center;">
             <div class="row h-100">
                 <div class="col-12 h-100 d-flex flex-wrap align-items-center justify-content-between">
-                    <!-- Footer Social Info -->
-                    <div class="footer-social-info text-right">
-                        <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                    </div>
-                    <!-- Footer Logo -->
                     <div class="footer-logo">
-                        <a href="index.ejs"><img src="img/core-img/logo.png" alt=""></a>
-                    </div>
-                    <!-- Copywrite -->
-                    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                </div>
+                        <a href="/"><img src="img/core-img/logo.png" alt=""></a>
             </div>
         </div>
     </footer>
-    <!-- ##### Footer Area Start ##### -->
+    <!-- ##### Footer Area End ##### -->
+<!-- ##### All Javascript Files ##### -->
+<!-- jQuery-2.2.4 js -->
 
-    <!-- ##### All Javascript Files ##### -->
-    <!-- jQuery-2.2.4 js -->
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
-    <!-- Popper js -->
-    <script src="js/bootstrap/popper.min.js"></script>
-    <!-- Bootstrap js -->
-    <script src="js/bootstrap/bootstrap.min.js"></script>
-    <!-- All Plugins js -->
-    <script src="js/plugins/plugins.js"></script>
-    <!-- Active js -->
-    <script src="js/active.js"></script>
+<script src="/receipe-post.js"></script>
+<script src="/js/jquery/jquery-2.2.4.min.js"></script>
+<!-- Popper js -->
+<script src="/js/bootstrap/popper.min.js"></script>
+<!-- Bootstrap js -->
+<script src="/js/bootstrap/bootstrap.min.js"></script>
+<!-- All Plugins js -->
+<script src="/js/plugins/plugins.js"></script>
+<!-- Active js -->
+<script src="/js/active.js"></script>
 </body>
 
 </html>

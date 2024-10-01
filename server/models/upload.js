@@ -27,8 +27,8 @@ const uploadSchema = new mongoose.Schema({
     },
     images: [ 
         {
-            data: Buffer,
-            contentType: String
+            filePath: String,  // Store the file path to the image
+            contentType: String // Store the MIME type of the file
         }
     ],
     ingredients: [String],

@@ -16,8 +16,7 @@
 
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="style.css">
-
-    <link rel="stylesheet" href="upload-receipe.css">
+    <link rel="stylesheet" href="upload-receipe.css" class="css">
 
 </head>
 
@@ -29,9 +28,9 @@
     </div>
 
     <!-- Search Wrapper -->
-    <div class="search-wrapper">
+    <!-- <div class="search-wrapper"> -->
         <!-- Close Btn -->
-        <div class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></div>
+        <!-- <div class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></div>
 
         <div class="container">
             <div class="row">
@@ -43,10 +42,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- ##### Header Area Start ##### -->
-    <header class="header-area">
+    <header class="header-area font">
 
         <!-- Navbar Area -->
         <div class="delicious-main-menu">
@@ -56,7 +55,7 @@
                     <nav class="classy-navbar justify-content-between" id="deliciousNav">
 
                         <!-- Logo -->
-                        <a class="nav-brand" href="index.ejs"><img src="img/core-img/logo.png" alt=""></a>
+                        <a class="nav-brand" href="/"><img src="img/core-img/logo.png" alt=""></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -74,19 +73,26 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li class="active"><a href="index.ejs">Home</a></li>
+                                    <li><a href="/">Home</a></li>
                                     <li><a href="upload-receipe.ejs">Upload Receipies</a>
                                     </li>
                                     <li><a href="receipe-post.ejs">Receipies</a></li>
                                     <!-- <li><a href="receipe-post.ejs">4 Vegans</a></li> -->
                                     <li><a href="contact.ejs">Contact</a></li>
+
+                                    <% if (cookies.uid) { %>
+                                        <li class="active"><a href="/logout" class="login-button">Logout</a></li>
+                                    <% } else { %>
+                                        <li class="active"><a href="/login" class="login-button active">Login</a></li>
+                                        <li class="active"><a href="/signup" class="signup-button active">Signup</a></li>
+                                    <% } %>    
                                 </ul>
 
                                 <!-- Newsletter Form -->
-                                <div class="search-btn">
+                                <!-- <div class="search-btn">
                                     <i class="fa fa-search" aria-hidden="true"></i>
-                                </div>
-
+                                    <span class="text" style="color: gray;">Search Testy...</span>
+                                </div> -->
                             </div>
                             <!-- Nav End -->
                         </div>
@@ -95,6 +101,7 @@
             </div>
         </div>
     </header>
+    <!-- ##### Header Area End ##### -->
     <!-- ##### Header Area End ##### -->
     <main>
         <div class="recform">
@@ -113,9 +120,20 @@
                             <label for="dishType">Dish Type</label>
                             <select id="dishType" name="dish_type">
                                 <option value="" disabled selected>Select your dish type</option>
-                                <option value="appetizer">Appetizer</option>
-                                <option value="main_course">Main Course</option>
-                                <option value="dessert">Dessert</option>
+                                <option value="appetizer">Appetizers/Starter</option>
+                                <option value="main_course">Soups</option>
+                                <option value="dessert">Salads</option>
+                                <option value="dessert"> Main Course (Vegetarian)</option>
+                                <option value="dessert">Main Course (Non-Vegetarian)</option>
+                                <option value="dessert">Rice Dishes</option>
+                                <option value="dessert">Pasta & Noodles</option>
+                                <option value="dessert">Breads</option>
+                                <option value="dessert">Desserts</option>
+                                <option value="dessert">Snacks</option>
+                                <option value="dessert">Side Dishes</option>
+                                <option value="dessert">Beverages</option>
+                                <option value="dessert">Sauces/Dips</option>
+                                <option value="dessert">Other</option>
                             </select>
                         </div>
 
@@ -187,33 +205,17 @@
         </div>
     </main>
     
-    <!-- ##### Footer Area Start ##### -->
-    <footer class="footer-area">
-        <div class="container h-100">
-            <div class="row h-100">
-                <div class="col-12 h-100 d-flex flex-wrap align-items-center justify-content-between">
-                    <!-- Footer Social Info -->
-                    <div class="footer-social-info text-right">
-                        <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                    </div>
-                    <!-- Footer Logo -->
-                    <div class="footer-logo">
-                        <a href="index.ejs"><img src="img/core-img/logo.png" alt=""></a>
-                    </div>
-                    <!-- Copywrite -->
-                    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+        <!-- ##### Footer Area Start ##### -->
+        <footer class="footer-area shadow">
+            <div class="container h-100"style="display: flex;align-items: center;justify-content: center;">
+                <div class="row h-100">
+                    <div class="col-12 h-100 d-flex flex-wrap align-items-center justify-content-between">
+                        <div class="footer-logo">
+                            <a href="/"><img src="img/core-img/logo.png" alt=""></a>
                 </div>
             </div>
-        </div>
-    </footer>
-    <!-- ##### Footer Area Start ##### -->
+        </footer>
+        <!-- ##### Footer Area End ##### -->
 
     <!-- ##### All Javascript Files ##### -->
     <!-- jQuery-2.2.4 js -->

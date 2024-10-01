@@ -1,0 +1,30 @@
+# Uploads.find({}).sort({ createdAt: -1 }).limit(6); =: sort the dataset Upload on the bases of the createdAt attribute, -1 indicate that sorting in decreasing order,.limit(6) indicate return 1st 6 elements.
+
+
+
+<div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <form id="searchForm" action="/receipe-post.ejs/:name" method="get" onsubmit="updateFormAction(event)">
+                        <input type="search" id="searchInput" name="search" placeholder="Type any keywords...">
+                        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+        function updateFormAction(event) {
+    event.preventDefault(); // Prevent the form from submitting immediately
+    const searchInput = document.getElementById('searchInput').value.trim();
+    const form = document.getElementById('searchForm');
+
+    if (searchInput) {
+        // Dynamically update the form action to include the search query
+        form.action = `/receipe-post.ejs/${encodeURIComponent(searchInput)}`;
+    }
+
+    // Submit the form after updating the action
+    form.submit();
+}
