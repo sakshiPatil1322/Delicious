@@ -3,6 +3,7 @@ const path = require('path');
 
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+require('dotenv').config();
 
 const { connectToMongoDB } = require("./connections");
 const staticRoutes = require('./server/routes/staticRouter');
@@ -16,11 +17,9 @@ const logoutRoutes = require('./server/routes/userLogout');
 const app = express();
 const PORT = process.env.PORT || 7307;
 
-connectToMongoDB('mongodb://127.0.0.1:27017/receipeWeb')
+connectToMongoDB('mongodb+srv://sakshipatil5333:3I6bPK4HPVDRG9lx@cluster0.pn7rq.mongodb.net/receipeWeb?retryWrites=true&w=majority')
 .then(()=>console.log("mongoDb connected succesfully..."))
 .catch((error)=>console.log("mongDb can't connect",error));
-
-require('dotenv').config();
 
 app.use(cookieParser());
 app.use(express.urlencoded({extended: true}));
