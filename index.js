@@ -17,8 +17,8 @@ const app = express();
 const PORT = process.env.PORT || 7307;
 
 connectToMongoDB() // Just call the connection function
-    .then(() => console.log("Server is started on Port", PORT))
-    .catch((error) => console.log("Failed to connect to MongoDB", error));
+    // .then(() => console.log("Server is started on Port", PORT))
+    // .catch((error) => console.log("Failed to connect to MongoDB", error));
 
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
