@@ -27,12 +27,17 @@ const handleLoginPage = async(req,res) => {
     res.render('login');
 }
 
+const handleProfile = async(req,res) => {
+    res.render('profile',{cookies: req.cookies});
+}
+
 module.exports={
     handleIndexPage,
     handleReceipePostPage,
     handleUploadReceipe,
     handleContactPage,
     handleSignupPage,
-    handleLoginPage
+    handleLoginPage,
+    handleProfile
 }
 
