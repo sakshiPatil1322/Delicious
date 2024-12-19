@@ -12,34 +12,65 @@ const uploadSchema = new mongoose.Schema({
     preprationTime: {
         type: Number,
         required: true,
+        min: [0, 'Preparation time must be a positive number'],
     },
     servings: {
         type: Number,
         required: true,
+        min: [1, 'Servings must be at least 1'],
     },
     cookingTime: {
         type: Number,
         required: true,
+        min: [0, 'Cooking time must be a positive number'],
     },
     shelfLife: {
         type: Number,
         required: true,
+        min: [0, 'Shelf life must be a positive number'],
     },
-    images: [ 
+    images: [
         {
-            filePath: String,  // Store the file path to the image
-            contentType: String // Store the MIME type of the file
-        }
+            url: {
+                type: String,
+                required: [true, 'Image URL is required'],
+            },
+            public_id: {
+                type: String,
+                required: [true, 'Image public_id is required'],
+            },
+        },
     ],
-    ingredients: [String],
-    instructions: [String],
+    ingredients: {
+        type: [String],
+        required: true,
+        validate: {
+            validator: function (v) {
+                return v.length > 0;
+            },
+            message: 'At least one ingredient is required',
+        },
+    },
+    instructions: {
+        type: [String],
+        required: true,
+        validate: {
+            validator: function (v) {
+                return v.length > 0;
+            },
+            message: 'At least one instruction is required',
+        },
+    },
     createdBy: {
         type: String,
+        required: true,
     },
     email: {
         type: String,
+        required: true,
+        match: [/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, 'Please enter a valid email'],
     }
-}, { timestamps: true });
+}, { timestamps:true});
 
 const UPLOAD = mongoose.model('upload', uploadSchema);
 

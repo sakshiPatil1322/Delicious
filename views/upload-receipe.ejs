@@ -108,14 +108,14 @@
             <div class="recform-container">
                 <h2>Share Your Recipe</h2>
                 <div class="places">
+
                     <form method="post" action="/upload" enctype="multipart/form-data">
-                        <!-- receipe name -->
+                        <!-- Recipe Name -->
                         <div class="form-group">
                             <label>Recipe Name</label>
                             <input type="text" name="recipe_name" placeholder="Enter recipe name">
                         </div>
-                        <!-- dish type -->
-
+                        <!-- Dish Type -->
                         <div class="form-group">
                             <label for="dishType">Dish Type</label>
                             <select id="dishType" name="dish_type">
@@ -136,36 +136,37 @@
                                 <option value="dessert">Other</option>
                             </select>
                         </div>
-
-                        <!-- preparation time -->
-                        
+                        <!-- Preparation Time -->
                         <div class="form-group">
-                            <label>Preparation time</label>
+                            <label>Preparation Time</label>
                             <input type="text" name="preparation_time" placeholder="ex: 20min">
                         </div>
+                        <!-- No. of Servings -->
                         <div class="form-group">
                             <label>No. of Servings</label>
                             <input type="text" name="no_of_servings" placeholder="ex: 4">
                         </div>
+                        <!-- Cooking Time -->
                         <div class="form-group">
                             <label>Cooking Time</label>
                             <input type="text" name="cooking_time" placeholder="ex: 40min">
                         </div>
+                        <!-- Shelf Life -->
                         <div class="form-group">
-                            <label>Shelf life</label>
-                            <input type="text" name="shelf_life" placeholder="enter in hr">
+                            <label>Shelf Life</label>
+                            <input type="text" name="shelf_life" placeholder="ex: 2 hours">
                         </div>
-                        
-                        <!-- Image Drop Area -->
+                    
+                        <!-- Image Upload -->
                         <div class="form-group">
                             <label>Recipe Images</label>
                             <div class="image-drop-area" id="imageDropArea">
                                 <p>Drag & Drop Images Here or Click to Upload</p>
                                 <input type="file" id="imageUpload" name="recipe_images" accept="image/*" multiple>
                             </div>
-                        </div>                        
-                        <!-- ingrediant -->
-
+                        </div>
+                    
+                        <!-- Ingredients -->
                         <div class="ingredients-section">
                             <div class="ingredient-input-container">
                                 <label for="ingredientInput">Ingredients</label>
@@ -175,9 +176,8 @@
                             <ul id="ingredientsList"></ul>
                             <input type="hidden" name="ingredients" id="ingredientsField">
                         </div>
-
-                        <!-- step of receipe -->
-                        
+                    
+                        <!-- Recipe Steps -->
                         <div class="steps-section">
                             <div class="step-input-container">
                                 <label for="stepInput">Recipe Steps</label>
@@ -187,19 +187,27 @@
                             <ul id="stepsList"></ul>
                             <input type="hidden" name="steps" id="stepsField">
                         </div>
-                        <!-- name -->
+                    
+                        <!-- Your Name -->
                         <div class="form-group">
                             <label>Your Name</label>
                             <input type="text" name="your_name" placeholder="Enter your name">
                         </div>
-                        <!-- email id -->
+                    
+
+                    
+
+                        <!-- Email Id -->
                         <div class="form-group">
                             <label>Email Id</label>
-                            <input type="text" name="email" placeholder="Enter email">
+                            <input type="email" name="email" style="width:70% ;height: 40px; border-radius: 4px; border: 1px solid rgb(218, 216, 216);">
                         </div>
-
+                    
                         <button type="submit">Submit</button>
                     </form>
+                    
+
+
                 </div>
             </div>
         </div>

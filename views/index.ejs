@@ -95,16 +95,7 @@
                                             <% } %>
                                 </ul>
 
-                                <!-- Newsletter Form -->
-                                <!-- <div class="search-btn">
-                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                </div> -->
-                                    <!-- <div class="search-btn">
-                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                        <span class="text" style="color: gray;">Search Testy...</span>
-                                    </div> -->
-                                
-                                                                
+          
 
                             </div>
                             <!-- Nav End -->
@@ -170,57 +161,7 @@
     <!-- ##### Hero Area End ##### -->
 
 
-    <!-- ##### Best Receipe Area Start ##### -->
-    <section class="best-receipe-area"style="width: 100%;">
-        <div class="container"style="width: 100%;">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading">
-                        <h3>The best Recipes</h3>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <% events.forEach((event)=> { %>
-                    <!-- <div class="col-12 col-sm-6 col-lg-4"> -->
-                        <div class="single-best-receipe-area mb-30 shadow padding height1"style="width:360px;margin-left:20px;align-items:center;">
-                            <% if (event.images && event.images.length> 0) { %>
-                                <!-- Use the file path to load the image -->
-                                <img src="/<%= event.images[0].filePath %>" alt="Recipe Image" style="height: 350px;">
-                                <% } else { %>
-                                    <!-- Default/fallback image if no image is available -->
-                                    <img src="/path-to-default-image.jpg" alt="No image available"
-                                        style="height: 350px;">
-                                    <% } %>
-
-                                        <a href="receipe-post.ejs/<%= event.receipeName %>" id="receName">
-                                            <h3 style="margin-top: 2px;">
-                                                <%= event.receipeName %>
-                                            </h3>
-                                        </a>
-                                        <div class="get">                                      
-                                        <span>
-                                            <%= new Date(event.createdAt).toLocaleDateString('en-US', { year: 'numeric' ,
-                                                month: 'long' , day: '2-digit' }) %>
-                                        </span>
-                                        <div class="accbtn">
-                                        <a href="receipe-post.ejs/<%= event.receipeName %>" id="accept">
-                                            <h6>
-                                                Show Receipe
-                                            </h6>
-                                        </a>
-                                    </div>
-                                    </div>
-
-                        </div>
-                    <!-- </div> -->
-                    <!-- <div class="padding"></div> -->
-                    <% }) %>
-            </div>
-        </div>
-    </section>
-
+    
 
     <!-- ##### Small Receipe Area Start ##### -->
     <section class="small-receipe-area ">
@@ -243,14 +184,11 @@
                             <!-- Receipe Thumb -->
                             <div class="receipe-thumb">
                                 <!-- <img src="img/bg-img/sr1.jpg" alt=""> -->
-                                <img src="/<%= receip.images[0].filePath %>" alt="Recipe Image" style="height: 82px;">
+                                <img src="<%= receip.images[0].url %>" alt="Recipe Image" style="height: 82px;">
                             </div>
                             <!-- Receipe Content -->
                             <div class="receipe-content">
-                                <span>
-                                    <%= new Date(receip.createdAt).toLocaleDateString('en-US', { year: 'numeric' ,
-                                        month: 'long' , day: '2-digit' }) %>
-                                </span>
+                               
                                 <a href="receipe-post.ejs/<%= receip.receipeName %>" id="receName">
                                     <h5>
                                         <%= receip.receipeName %>

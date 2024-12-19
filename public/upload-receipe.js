@@ -100,3 +100,28 @@ function updateStepsField() {
     document.getElementById('stepsField').value = JSON.stringify(steps);
 }
 
+
+
+// Add ingredient
+document.getElementById('addIngredientBtn').addEventListener('click', function() {
+    const ingredient = document.getElementById('ingredientInput').value;
+    if (ingredient) {
+        const li = document.createElement('li');
+        li.textContent = ingredient;
+        document.getElementById('ingredientsList').appendChild(li);
+        document.getElementById('ingredientsField').value += ingredient + ",";
+        document.getElementById('ingredientInput').value = ''; // Clear input
+    }
+});
+
+// Add step
+document.getElementById('addStepBtn').addEventListener('click', function() {
+    const step = document.getElementById('stepInput').value;
+    if (step) {
+        const li = document.createElement('li');
+        li.textContent = step;
+        document.getElementById('stepsList').appendChild(li);
+        document.getElementById('stepsField').value += step + ",";
+        document.getElementById('stepInput').value = ''; // Clear input
+    }
+});
